@@ -3,7 +3,7 @@ import struct
 class Record_SDlogs_65280:
     fields = ['text']
     message_type = 65280
-    label = 'Recors_SDlogs'
+    label = 'Record_SDlogs'
     _length = -1
     verboseOnly = True
     payload = []

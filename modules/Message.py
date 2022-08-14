@@ -122,6 +122,8 @@ class Message:
                      'rbStatus', 'rbCurrent', 'rbSpeed', 'rbVolts', 'rbTemp', 'rbPPM_recv', 'rbV_out', 'rbPPM_send',
                      ]
     fieldnames_v3 = ['messageid', 'offsetTime', 'logDateTime', 'time(millisecond)',
+                     # 32768, 65532, 65533, 65535, 32768, 65280
+                     'text',
                      # 2096
                      'latitude', 'longitude', 'altitude', 'velN', 'velE', 'velD', 'date', 'time', 'hdop', 'pdop', 'hacc', 'sacc', 'numGPS', 'numGLN', 'numSV',
                      # 1710

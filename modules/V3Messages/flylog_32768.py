@@ -8,7 +8,7 @@ class flylog_32768:
     data = {}
 
     def __init__(self, payload):
-        self.data = self.parse(payload)
+        self.data = self.parse(payload.decode(encoding='UTF-8', errors='backslashreplace'))
 
     @classmethod
     def parse(self, payload):

@@ -5,7 +5,7 @@ class Record_ModuleName_65532:
     message_type = 65532
     label = 'Record_ModuleName'
     _length = -1
-    verboseOnly = True
+    verboseOnly = False
     payload = []
     data = {}
 

@@ -6,7 +6,7 @@ class Sys_cfg_65535:
     message_type = 65535
     label = 'Sys_cfg'
     _length = -1
-    verboseOnly = True
+    verboseOnly = False
     payload = []
     data = {}
 

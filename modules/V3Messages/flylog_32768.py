@@ -3,7 +3,7 @@ class flylog_32768:
     message_type = 32768
     label = ''
     _length = -1
-    verboseOnly = True
+    verboseOnly = False
     payload = []
     data = {}
 

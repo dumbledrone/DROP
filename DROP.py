@@ -173,9 +173,9 @@ for ifn in in_files_list:
 
     if is_v3:
         if args.v:
-            writer = csv.DictWriter(out_file, lineterminator='\n', fieldnames=Message.fieldnames_v3_verbose)
+            writer = csv.DictWriter(out_file, lineterminator='\n', fieldnames=Message.fieldnames_v3_verbose, escapechar="\\")
         else:
-            writer = csv.DictWriter(out_file, lineterminator='\n', fieldnames=Message.fieldnames_v3)
+            writer = csv.DictWriter(out_file, lineterminator='\n', fieldnames=Message.fieldnames_v3, escapechar="\\")
         if args.g:
             gps_out_file = open(out_fn[:-4] + '-gps' + out_fn[-4:], 'w')
             gpsWriter = csv.DictWriter(gps_out_file, lineterminator='\n', fieldnames=['latitude', 'longitude', 'altitude', 'velN', 'velE', 'velD', 'date', 'time', 'hdop', 'pdop', 'hacc', 'sacc', 'numGPS', 'numGLN', 'numSV'])

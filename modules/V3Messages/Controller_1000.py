@@ -15,7 +15,9 @@ class Controller_1000:
 
     @classmethod
     def parse(self, payload):
-        data = {'ctrl_tick': struct.unpack('I', payload[0:4])[0],
+        if len(payload) == 39:
+            data = {
+                'ctrl_tick': struct.unpack('I', payload[0:4])[0],
                 'ctrl_pitch': struct.unpack('h', payload[4:6])[0],
                 'ctrl_roll': struct.unpack('h', payload[6:8])[0],
                 'ctrl_yaw': struct.unpack('h', payload[8:10])[0],
@@ -39,6 +41,31 @@ class Controller_1000:
                 'OH_take': struct.unpack('B', payload[36:37])[0],
                 'rc_cnt': struct.unpack('B', payload[37:38])[0],
                 'sup_rc': struct.unpack('B', payload[38:39])[0]
-                }
+            }
+        elif len(payload) == 47:
+            data = {
+                'ctrl_tick': struct.unpack('I', payload[0:4])[0],
+                'ctrl_pitch': struct.unpack('f', payload[4:8])[0],
+                'ctrl_roll': struct.unpack('f', payload[8:12])[0],
+                'ctrl_yaw': struct.unpack('f', payload[12:16])[0],
+                'ctrl_thr': struct.unpack('f', payload[16:20])[0],
+                'ctrl_mode': struct.unpack('B', payload[20:21])[0],
+                'mode_switch': struct.unpack('B', payload[21:22])[0],
+                'motor_state': struct.unpack('B', payload[22:23])[0],
+                'sig_level': struct.unpack('B', payload[23:24])[0],
+                'ctrl_level': struct.unpack('B', payload[24:25])[0],
+                'sim_model': struct.unpack('B', payload[25:26])[0],
+                'max_height': struct.unpack('H', payload[26:28])[0],
+                'max_radius': struct.unpack('H', payload[28:30])[0],
+                'D2H_x': struct.unpack('f', payload[30:34])[0],
+                'D2H_y': struct.unpack('f', payload[34:38])[0],
+                'act_req_id': struct.unpack('B', payload[39:40])[0],
+                'act_act_id': struct.unpack('B', payload[40:41])[0],
+                'cmd_mod': struct.unpack('B', payload[41:42])[0],
+                'mod_req_id': struct.unpack('B', payload[42:43])[0],
+            }
+        else:
+            print(self.label + " missing length definition for length of " + str(len(payload)))
+            data = {}
 
         return data

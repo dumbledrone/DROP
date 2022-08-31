@@ -14,4 +14,4 @@ The available types are only implemented to support the Phantom 4 Advanced, if t
 
 ## Credits
 Original Version by Devon Clark\
-DATv3 Extension by Andreas Hellmich and Annika Knepper
+
